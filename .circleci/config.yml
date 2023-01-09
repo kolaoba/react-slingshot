@@ -9,13 +9,13 @@ jobs:
   build:
     executor: node-executor
     steps:
-      - checkout
-      - run: npm i
-      - save_cache:
-          key: "npm-packages"
-          paths:
-            - /src/node_modules
-       - run: npm run lint
+    - checkout
+    - run: npm i
+    - save_cache:
+        key: "npm-packages"
+        paths:
+          - /src/node_modules
+      - run: npm run lint
   test:
     executor: node-executor
     steps:
